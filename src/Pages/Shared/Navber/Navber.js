@@ -36,23 +36,42 @@ const Navber = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link>Services</Link>
+                <Link to="/blog">Blog</Link>
               </li>
-              <li>
-                <Link>Blog</Link>
-              </li>
-
-              <li>
-                <Link>About</Link>
-              </li>
-              <div className="items-center flex-shrink-0 lg:flex ml-3">
-                <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600">
-                  Login
-                </button>
-                <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600">
-                  SignUp
-                </button>
-              </div>
+              {user?.email ? (
+                <>
+                  <li>
+                    <Link to="/services">Services</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                  <Link
+                    onClick={logout}
+                    to="/"
+                    className="items-center flex-shrink-0 lg:flex ml-3"
+                  >
+                    <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
+                      LogOut
+                    </button>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <div className="items-center flex-shrink-0 lg:flex ml-3">
+                    <Link to="/login">
+                      <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600 hover:text-white">
+                        Login
+                      </button>
+                    </Link>
+                    <Link to="/signup">
+                      <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
+                        SignUp
+                      </button>
+                    </Link>
+                  </div>
+                </>
+              )}
             </ul>
           </div>
           <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
@@ -60,6 +79,58 @@ const Navber = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+            {user?.email ? (
+              <>
+                <li>
+                  <Link to="/services">Services</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <label
+                  htmlFor="my-drawer"
+                  className=" self-center px-5 py-3 cursor-pointer rounded font-semibold hover:bg-blue-600 hover:text-white  drawer-button"
+                >
+                  Setting
+                </label>
+                <Link
+                  onClick={logout}
+                  to="/"
+                  className="items-center flex-shrink-0 lg:flex ml-3"
+                >
+                  <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
+                    LogOut
+                  </button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <label
+                  htmlFor="my-drawer"
+                  className=" self-center px-5 py-3 cursor-pointer rounded font-semibold hover:bg-blue-600 hover:text-white  drawer-button"
+                >
+                  Setting
+                </label>
+                <div className="items-center flex-shrink-0 lg:flex ml-3">
+                  <Link to="/login">
+                    <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600 hover:text-white">
+                      Login
+                    </button>
+                  </Link>
+                  <Link to="/signup">
+                    <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
+                      SignUp
+                    </button>
+                  </Link>
+                </div>
+              </>
+            )}
+            {/* <li>
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -92,7 +163,7 @@ const Navber = () => {
               <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
                 LogOut
               </button>
-            </div>
+            </div> */}
           </ul>
         </div>
       </div>
