@@ -74,16 +74,16 @@ const Navber = () => {
 
             <div className="items-center flex-shrink-0 hidden lg:flex ml-3">
               <Link to="/login">
-                <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600">
+                <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600 hover:text-white">
                   Login
                 </button>
               </Link>
               <Link to="/signup">
-                <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600">
+                <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
                   SignUp
                 </button>
               </Link>
-              <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600">
+              <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
                 LogOut
               </button>
             </div>
