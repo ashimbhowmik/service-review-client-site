@@ -1,8 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/images/login/login.png";
+import useAuth from "../Hooks/useAuth";
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
+
+const handleLogin = (email, password, loginUser, location, navigate) => {
+  loginUser(email, password, location, navigate);
+};
 
 const Login = () => {
+  const {
+    signInWithGoogle,
+    loginUser,
+    isLoading,
+    authError,
+    user,
+    githubSignIn,
+  } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  //google
+  const handelGoogleSignUp = (signInWithGoogle, location, navigate) => {
+    signInWithGoogle(location, navigate);
+  };
+
+  //github
+  const handleGithubSignUp = (githubSignIn, location, navigate) => {
+    githubSignIn(location, navigate);
+  };
   return (
     <div>
       <section className="flex w-[85%] mx-auto mt-20 mb-36">
@@ -28,6 +55,9 @@ const Login = () => {
             <h2 className="mb-8 text-4xl font-semibold text-center">Login</h2>
             <div className="my-6 space-y-4 ">
               <button
+                onClick={() =>
+                  handelGoogleSignUp(signInWithGoogle, location, navigate)
+                }
                 aria-label="Login with Google"
                 type="button"
                 className="flex items-center justify-center w-full p-2 space-x-4 border rounded-full focus:ring-2 focus:ring-offset-1 border-gray-300 focus:ring-blue-600"
@@ -42,6 +72,9 @@ const Login = () => {
                 <p>Login with Google</p>
               </button>
               <button
+                onClick={() =>
+                  handleGithubSignUp(githubSignIn, location, navigate)
+                }
                 aria-label="Login with Google"
                 type="button"
                 className="flex items-center justify-center w-full p-2 space-x-4 border rounded-full focus:ring-2 focus:ring-offset-1 border-gray-300 focus:ring-blue-600"
@@ -62,6 +95,13 @@ const Login = () => {
               <hr className="w-full text-gray-600" />
             </div>
             <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const email = e.target.email.value;
+                const password = e.target.password.value;
+
+                handleLogin(email, password, loginUser, location, navigate);
+              }}
               novalidate=""
               action=""
               className="space-y-8 ng-untouched ng-pristine ng-valid"
@@ -98,7 +138,53 @@ const Login = () => {
                   />
                 </div>
               </div>
+              <>
+                {isLoading && (
+                  <>
+                    <div className="alert shadow-lg">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          className="stroke-info flex-shrink-0 w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          ></path>
+                        </svg>
+                        <span>Please Wait....</span>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </>
 
+              {authError && (
+                <>
+                  <div className="alert alert-error shadow-lg">
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="stroke-current flex-shrink-0 h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span>{authError}</span>
+                    </div>
+                  </div>
+                </>
+              )}
               <input
                 type="button"
                 className="w-full px-8 py-3 font-semibold cursor-pointer bg-blue-600 text-gray-50 rounded-full"
@@ -123,6 +209,7 @@ const Login = () => {
           </div>
         </div>
       </section>
+      <ToastContainer position="top-center" />
     </div>
   );
 };

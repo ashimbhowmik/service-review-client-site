@@ -47,7 +47,7 @@ const useFirebase = () => {
           .then(() => {})
           .catch((error) => {});
 
-        navigate("/courses");
+        navigate("/services");
       })
       .catch((error) => {
         setAuthError(error.message);
@@ -63,7 +63,7 @@ const useFirebase = () => {
         const user = result.user;
 
         setAuthError("");
-        const destination = location?.state?.from || "/courses";
+        const destination = location?.state?.from || "/services";
         navigate(destination);
       })
       .catch((error) => {
@@ -84,7 +84,7 @@ const useFirebase = () => {
         // The signed-in user info.
         const user = result.user;
         setAuthError("");
-        const destination = location?.state?.from || "/courses";
+        const destination = location?.state?.from || "/services";
         navigate(destination);
       })
       .catch((error) => {
@@ -98,7 +98,7 @@ const useFirebase = () => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const destination = location?.state?.from || "/courses";
+        const destination = location?.state?.from || "/services";
         navigate(destination);
         setAuthError("");
       })

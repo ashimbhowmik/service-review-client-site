@@ -66,13 +66,19 @@ const Navber = () => {
               <Link>Services</Link>
             </li>
             <li>
-              <Link>Blog</Link>
+              <Link to="/blog">Blog</Link>
             </li>
             <li>
               <Link>About</Link>
             </li>
 
             <div className="items-center flex-shrink-0 hidden lg:flex ml-3">
+              <label
+                htmlFor="my-drawer"
+                className=" self-center px-5 py-3 cursor-pointer rounded font-semibold hover:bg-blue-600 hover:text-white  drawer-button"
+              >
+                Setting
+              </label>
               <Link to="/login">
                 <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600 hover:text-white">
                   Login
