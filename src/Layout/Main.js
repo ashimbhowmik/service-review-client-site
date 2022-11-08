@@ -40,7 +40,7 @@ const Main = () => {
                 <li className="bg-gray-100 text-gray-900">
                   <Link
                     rel="noopener noreferrer"
-                    href="#"
+                    to="/"
                     className="flex items-center p-2 space-x-3 rounded-md"
                   >
                     <svg
@@ -64,7 +64,7 @@ const Main = () => {
                 <li>
                   <Link
                     rel="noopener noreferrer"
-                    href="#"
+                    to="/services"
                     className="flex items-center p-2 space-x-3 rounded-md"
                   >
                     <svg
@@ -82,7 +82,7 @@ const Main = () => {
                 <li>
                   <Link
                     rel="noopener noreferrer"
-                    href="#"
+                    to="/blog"
                     className="flex items-center p-2 space-x-3 rounded-md"
                   >
                     <svg
@@ -106,7 +106,7 @@ const Main = () => {
                 <li>
                   <Link
                     rel="noopener noreferrer"
-                    href="#"
+                    to="/about"
                     className="flex items-center p-2 space-x-3 rounded-md"
                   >
                     <svg
@@ -132,7 +132,7 @@ const Main = () => {
                 <li>
                   <Link
                     rel="noopener noreferrer"
-                    href="#"
+                    to="/login"
                     className="flex items-center p-2 space-x-3 rounded-md"
                   >
                     <svg
@@ -150,13 +150,29 @@ const Main = () => {
                       />
                     </svg>
 
-                    <span>Login</span>
+                    <button>Login</button>
                   </Link>
                 </li>
                 <li>
                   <Link
                     rel="noopener noreferrer"
-                    href="#"
+                    to="/signup"
+                    className="flex items-center p-2 space-x-3 rounded-md"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      className="w-5 h-5 fill-current text-gray-600"
+                    >
+                      <path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
+                      <rect width="32" height="64" x="256" y="232"></rect>
+                    </svg>
+                    <button>SignUp</button>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    rel="noopener noreferrer"
                     className="flex items-center p-2 space-x-3 rounded-md"
                   >
                     <svg
@@ -173,25 +189,7 @@ const Main = () => {
                         d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
                       />
                     </svg>
-
-                    <span>LogOut</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="flex items-center p-2 space-x-3 rounded-md"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                      className="w-5 h-5 fill-current text-gray-600"
-                    >
-                      <path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
-                      <rect width="32" height="64" x="256" y="232"></rect>
-                    </svg>
-                    <span>SignUp</span>
+                    <button>LogOut</button>
                   </Link>
                 </li>
               </ul>
