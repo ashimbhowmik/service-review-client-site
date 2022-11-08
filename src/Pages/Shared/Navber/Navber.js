@@ -9,7 +9,7 @@ const Navber = () => {
   console.log(user);
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 py-5 w-[95%] mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,32 +33,17 @@ const Navber = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link>Item 1</Link>
-              </li>
-              <li tabIndex={0}>
-                <Link className="justify-between">
-                  Parent
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                  </svg>
-                </Link>
-                <ul className="p-2">
-                  <li>
-                    <Link>Submenu 1</Link>
-                  </li>
-                  <li>
-                    <Link>Submenu 2</Link>
-                  </li>
-                </ul>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link>Item 3</Link>
+                <Link>Services</Link>
+              </li>
+              <li>
+                <Link>Blog</Link>
+              </li>
+
+              <li>
+                <Link>About</Link>
               </li>
               <div className="items-center flex-shrink-0 lg:flex ml-3">
                 <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600">
@@ -75,39 +60,31 @@ const Navber = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <Link>Item 1</Link>
-            </li>
-            <li tabIndex={0}>
-              <Link>
-                Parent
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                </svg>
-              </Link>
-              <ul className="p-2">
-                <li>
-                  <Link>Submenu 1</Link>
-                </li>
-                <li>
-                  <Link>Submenu 2</Link>
-                </li>
-              </ul>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link>Item 3</Link>
+              <Link>Services</Link>
             </li>
+            <li>
+              <Link>Blog</Link>
+            </li>
+            <li>
+              <Link>About</Link>
+            </li>
+
             <div className="items-center flex-shrink-0 hidden lg:flex ml-3">
-              <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600">
-                Login
-              </button>
+              <Link to="/login">
+                <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600">
+                  Login
+                </button>
+              </Link>
+              <Link to="/signup">
+                <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600">
+                  SignUp
+                </button>
+              </Link>
               <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600">
-                SignUp
+                LogOut
               </button>
             </div>
           </ul>
