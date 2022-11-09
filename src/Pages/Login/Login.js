@@ -51,7 +51,7 @@ const Login = () => {
           />
         </div>
         <div className="w-[35%] ">
-          <div className="w-full max-w-md p-4 rounded-md  sm:p-8 text-gray-800 shadow-lg">
+          <div className="w-full max-w-md p-4 rounded-md  sm:p-8 text-gray-800 shadow-md">
             <h2 className="mb-8 text-4xl font-semibold text-center">Login</h2>
             <div className="my-6 space-y-4 ">
               <button

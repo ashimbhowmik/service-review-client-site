@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Banner from "./Banner/Banner";
 import Features from "./Features/Features";
 
@@ -16,12 +17,14 @@ const Home = () => {
               esse ab amet vero eaque explicabo!
             </p>
             <div className="flex flex-wrap justify-center">
-              <button
-                type="button"
-                className="px-8 py-3 m-2 text-lg border rounded border-gray-300 hover:bg-gray-100 text-gray-50 hover:text-black"
-              >
-                Services
-              </button>
+              <Link to="/services">
+                <button
+                  type="button"
+                  className="px-8 py-3 m-2 text-lg border rounded border-gray-300 hover:bg-gray-100 text-gray-50 hover:text-black"
+                >
+                  Services
+                </button>
+              </Link>
               <label
                 htmlFor="my-drawer"
                 className="px-8 py-3 m-2 text-lg border rounded border-gray-300 hover:bg-gray-100 text-gray-50 hover:text-black drawer-button"

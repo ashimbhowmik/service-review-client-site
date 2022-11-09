@@ -1,10 +1,10 @@
 import React from "react";
-import img1 from "../../../assets/images/banner/wadding.webp";
-import img2 from "../../../assets/images/banner/sports.jpg";
-import img3 from "../../../assets/images/banner/journalism.jpg";
-import img4 from "../../../assets/images/banner/tour.jpg";
-import img5 from "../../../assets/images/banner/wield.jpg";
-import img6 from "../../../assets/images/banner/doument.jpg";
+import img1 from "../../../assets/images/banner/Engagment.jpg";
+import img2 from "../../../assets/images/banner/HaldiCeremony.webp";
+import img3 from "../../../assets/images/banner/MehendiCeremony.webp";
+import img4 from "../../../assets/images/banner/RokaCeremony.jpg";
+import img5 from "../../../assets/images/banner/SangeetCeremony.jpg";
+import img6 from "../../../assets/images/banner/wadding.webp";
 import BannarItem from "./BannarItem";
 import "./Banner.css";
 

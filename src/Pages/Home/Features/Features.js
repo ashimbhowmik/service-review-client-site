@@ -1,6 +1,6 @@
 import React from "react";
-import img1 from "../../../assets/images/banner/wadding.webp";
-import img2 from "../../../assets/images/banner/wield.jpg";
+import img1 from "../../../assets/images/banner/RokaCeremony.jpg";
+import img2 from "../../../assets/images/banner/MehendiCeremony.webp";
 
 const Features = () => {
   return (

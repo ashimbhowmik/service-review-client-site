@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
+import AddServices from "../Pages/AddServices/AddServices";
 import Blog from "../Pages/Blog/Blog";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import MyReviwes from "../Pages/MyReviews/MyReviwes";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import Services from "../Pages/Services/Services";
 import SignUp from "../Pages/SignUp/SignUp";
@@ -37,9 +39,36 @@ export const routes = createBrowserRouter([
             <Services></Services>
           </PrivateRoute>
         ),
+        loader: () => fetch("http://localhost:5000/services"),
       },
       {
         path: "/services",
+        element: (
+          <PrivateRoute>
+            <Services></Services>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/services"),
+      },
+
+      {
+        path: "/myReviwes",
+        element: (
+          <PrivateRoute>
+            <MyReviwes></MyReviwes>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addServices",
+        element: (
+          <PrivateRoute>
+            <AddServices></AddServices>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/about",
         element: (
           <PrivateRoute>
             <About></About>

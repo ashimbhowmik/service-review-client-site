@@ -48,7 +48,7 @@ const SignUp = () => {
           />
         </div>
         <div className="w-[35%] ">
-          <div className="w-full max-w-md p-4 rounded-md  sm:p-8 text-gray-800 shadow-lg">
+          <div className="w-full max-w-md p-4 rounded-md  sm:p-8 text-gray-800 shadow-md">
             <h2 className="mb-8 text-4xl font-semibold text-center">SignUp</h2>
             <form
               onSubmit={(e) => {

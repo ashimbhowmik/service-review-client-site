@@ -1,10 +1,7 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const Navber = () => {
-  const [open, setOpen] = useState(false);
-
   const { user, logout } = useAuth();
   console.log(user);
   return (
@@ -38,10 +35,16 @@ const Navber = () => {
               <li>
                 <Link to="/blog">Blog</Link>
               </li>
-              {user?.email ? (
+              {user?.photoURL ? (
                 <>
                   <li>
                     <Link to="/services">Services</Link>
+                  </li>
+                  <li>
+                    <Link to="/myReviwes">My Reviwes</Link>
+                  </li>
+                  <li>
+                    <Link to="/addServices">Add Services</Link>
                   </li>
                   <li>
                     <Link to="/about">About</Link>
@@ -59,6 +62,9 @@ const Navber = () => {
               ) : (
                 <>
                   <div className="items-center flex-shrink-0 lg:flex ml-3">
+                    <li>
+                      <Link to="/services">Services</Link>
+                    </li>
                     <Link to="/login">
                       <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600 hover:text-white">
                         Login
@@ -84,10 +90,16 @@ const Navber = () => {
             <li>
               <Link to="/blog">Blog</Link>
             </li>
-            {user?.email ? (
+            {user?.photoURL ? (
               <>
                 <li>
                   <Link to="/services">Services</Link>
+                </li>
+                <li>
+                  <Link to="/myReviwes">My Reviwes</Link>
+                </li>
+                <li>
+                  <Link to="/addServices">Add Services</Link>
                 </li>
                 <li>
                   <Link to="/about">About</Link>
@@ -110,6 +122,9 @@ const Navber = () => {
               </>
             ) : (
               <>
+                <li>
+                  <Link to="/services">Services</Link>
+                </li>
                 <label
                   htmlFor="my-drawer"
                   className=" self-center px-5 py-3 cursor-pointer rounded font-semibold hover:bg-blue-600 hover:text-white  drawer-button"
@@ -130,40 +145,6 @@ const Navber = () => {
                 </div>
               </>
             )}
-            {/* <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link>Services</Link>
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link>About</Link>
-            </li>
-
-            <div className="items-center flex-shrink-0 hidden lg:flex ml-3">
-              <label
-                htmlFor="my-drawer"
-                className=" self-center px-5 py-3 cursor-pointer rounded font-semibold hover:bg-blue-600 hover:text-white  drawer-button"
-              >
-                Setting
-              </label>
-              <Link to="/login">
-                <button className="self-center px-5 py-3 rounded font-semibold hover:bg-blue-600 hover:text-white">
-                  Login
-                </button>
-              </Link>
-              <Link to="/signup">
-                <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
-                  SignUp
-                </button>
-              </Link>
-              <button className="self-center px-5 py-3 font-semibold rounded hover:bg-blue-600 hover:text-white">
-                LogOut
-              </button>
-            </div> */}
           </ul>
         </div>
       </div>
