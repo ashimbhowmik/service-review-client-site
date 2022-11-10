@@ -38,6 +38,7 @@ export const routes = createBrowserRouter([
         element: <Services></Services>,
         loader: () => fetch("http://localhost:5000/services"),
       },
+
       {
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
@@ -52,7 +53,9 @@ export const routes = createBrowserRouter([
             <MyReviwes></MyReviwes>
           </PrivateRoute>
         ),
+        loader: () => fetch("http://localhost:5000/reviews"),
       },
+
       {
         path: "/addServices",
         element: (

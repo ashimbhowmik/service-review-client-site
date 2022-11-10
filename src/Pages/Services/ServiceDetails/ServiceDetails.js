@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../ContextAPI/AuthProvider/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
+import ReviewStore from "../../MyReviews/ReviewStore/ReviewStore";
 
 const ServiceDetails = () => {
   const oneService = useLoaderData();
@@ -13,7 +14,7 @@ const ServiceDetails = () => {
   const handleReview = (event) => {
     event.preventDefault();
     const form = event.target;
-    const customerName = form.name.value;
+    const customerName = form.customerName.value;
     const email = user?.email || "unregistered";
     const rating = form.rating.value;
     const message = form.message.value;
@@ -92,6 +93,7 @@ const ServiceDetails = () => {
             </div>
           </div>
         </section>
+        <ReviewStore _id={_id}></ReviewStore>
         {user?.photoURL ? (
           <>
             <section className="mx-auto bg-blue-500 w-[90%] p-12">
@@ -107,7 +109,6 @@ const ServiceDetails = () => {
                     type="text"
                     placeholder="Name"
                     defaultValue={user?.displayName}
-                    readOnly
                     className="input input-ghost w-full bg-white input-bordered"
                   />
                   <input
@@ -116,7 +117,6 @@ const ServiceDetails = () => {
                     placeholder="Your email"
                     defaultValue={user?.email}
                     className="input input-ghost w-full  bg-white input-bordered"
-                    readOnly
                   />
                 </div>
                 <input
