@@ -7,9 +7,7 @@ const ReviewCard = ({ r, handleDelete }) => {
   const { _id, email, message, rating, serviceName, userImage, customer } = r;
 
   const updateReview = (data) => {
-    console.log(data);
-
-    fetch(`http://localhost:5000/reviews/${data?.id}`, {
+    fetch(`http://localhost:5000/reviews/${r?._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -106,8 +104,8 @@ const ReviewCard = ({ r, handleDelete }) => {
                       const email = e.target.email.value;
                       const rating = e.target.rating.value;
                       const message = e.target.message.value;
-                      const id = r._id;
-                      const data = { name, email, rating, message, id };
+                      //   const id = r._id;
+                      const data = { name, email, rating, message };
                       updateReview(data);
                     }}
                   >
