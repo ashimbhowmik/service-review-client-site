@@ -47,9 +47,6 @@ const Navber = () => {
                   <li>
                     <Link to="/addServices">Add Services</Link>
                   </li>
-                  <li>
-                    <Link to="/about">About</Link>
-                  </li>
                   <Link
                     onClick={logout}
                     to="/"
@@ -107,9 +104,7 @@ const Navber = () => {
                 <li>
                   <Link to="/addServices">Add Services</Link>
                 </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
+
                 <label
                   htmlFor="my-drawer"
                   className=" self-center px-5 py-3 cursor-pointer rounded font-semibold hover:bg-blue-600 hover:text-white  drawer-button"

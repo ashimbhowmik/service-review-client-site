@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
-import About from "../Pages/About/About";
+
 import AddServices from "../Pages/AddServices/AddServices";
 import Blog from "../Pages/Blog/Blog";
 import Home from "../Pages/Home/Home";
@@ -73,14 +73,6 @@ export const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddServices></AddServices>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/about",
-        element: (
-          <PrivateRoute>
-            <About></About>
           </PrivateRoute>
         ),
       },

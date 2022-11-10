@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../../ContextAPI/AuthProvider/AuthProvider";
 
 const ReviewCard = ({ r, handleDelete }) => {
+  const { user } = useContext(AuthContext);
+
   const { _id, email, message, rating, serviceName, userImage, customer } = r;
+
+  const updateReview = (data) => {
+    console.log(data);
+
+    fetch(`http://localhost:5000/reviews/${data?.id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <div>
       <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-50 text-gray-800 mx-auto">
@@ -47,8 +65,12 @@ const ReviewCard = ({ r, handleDelete }) => {
               </svg>
             </div>
           </div>
+          {/* moddal btn */}
           <div className="flex space-x-2 text-sm text-gray-600">
-            <button type="button" className="flex items-center p-1 space-x-1.5">
+            <label
+              htmlFor={_id}
+              className="btn flex items-center p-1 space-x-1.5"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -63,7 +85,73 @@ const ReviewCard = ({ r, handleDelete }) => {
                   d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
                 />
               </svg>
-            </button>
+            </label>
+
+            {/* The button to open modal */}
+
+            {/* Put this part before </body> tag */}
+            <input type="checkbox" id={_id} className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+              <div className="modal-box">
+                <section className="mx-auto bg-blue-500 w-[90%] p-12">
+                  <i>
+                    <h1 className="text-center text-4xl font-bold mb-10 text-white">
+                      Update Your Review
+                    </h1>
+                  </i>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const name = e.target.customerName.value;
+                      const email = e.target.email.value;
+                      const rating = e.target.rating.value;
+                      const message = e.target.message.value;
+                      const id = r._id;
+                      const data = { name, email, rating, message, id };
+                      updateReview(data);
+                    }}
+                  >
+                    <div className="flex gap-2 mb-3">
+                      <input
+                        name="customerName"
+                        type="text"
+                        placeholder="Name"
+                        defaultValue={r?.customer}
+                        className="input input-ghost w-full bg-white input-bordered"
+                      />
+                      <input
+                        name="email"
+                        type="text"
+                        placeholder="Your email"
+                        defaultValue={r?.email}
+                        className="input input-ghost w-full  bg-white input-bordered"
+                      />
+                    </div>
+                    <input
+                      name="rating"
+                      type="number"
+                      placeholder="Rating"
+                      defaultValue={r?.rating}
+                      className="input input-ghost w-full bg-white mb-3 input-bordered"
+                    />
+                    <textarea
+                      name="message"
+                      className="textarea textarea-bordered bg-white  h-24 w-full"
+                      placeholder="Your Opinion"
+                      defaultValue={r?.message}
+                      required
+                    ></textarea>
+
+                    <input className="btn" type="submit" value="Submit" />
+                  </form>
+                </section>
+                <div className="modal-action">
+                  <label htmlFor={_id} className="btn">
+                    Yay!
+                  </label>
+                </div>
+              </div>
+            </div>
             <button
               onClick={() => handleDelete(_id)}
               type="button"

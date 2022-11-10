@@ -3,27 +3,6 @@ import FilterReview from "../FilterReview/FilterReview";
 
 const ReviewStore = ({ _id }) => {
   const [reviews, setReviews] = useState();
-  const [deleteData, setDeleteData] = useState([]);
-  const handleDelete = (id) => {
-    const proceed = window.confirm("Are you sure delete your review");
-    if (proceed) {
-      fetch(`https://service-review-server-site.vercel.app/reviews/${id}`, {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("genius-token")}`,
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            alert("deleted successfully");
-            const remaining = deleteData.filter((odr) => odr._id !== id);
-            setDeleteData(remaining);
-          }
-        })
-        .finally(window.location.reload());
-    }
-  };
   useEffect(() => {
     fetch("https://service-review-server-site.vercel.app/reviews")
       .then((res) => res.json())
@@ -36,11 +15,7 @@ const ReviewStore = ({ _id }) => {
     <div>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-[90%] mx-auto">
         {serviceReviews?.map((s) => (
-          <FilterReview
-            key={s._id}
-            s={s}
-            handleDelete={handleDelete}
-          ></FilterReview>
+          <FilterReview key={s._id} s={s}></FilterReview>
         ))}
       </div>
     </div>
