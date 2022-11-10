@@ -47,6 +47,11 @@ export const routes = createBrowserRouter([
       },
 
       {
+        path: "/services/:id",
+        element: <AddServices></AddServices>,
+      },
+
+      {
         path: "/myReviwes",
         element: (
           <PrivateRoute>

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ReviewCard = ({ r }) => {
+const ReviewCard = ({ r, handleDelete }) => {
   const { _id, email, message, rating, serviceName, userImage, customer } = r;
   return (
     <div>
@@ -65,7 +65,11 @@ const ReviewCard = ({ r }) => {
                 />
               </svg>
             </button>
-            <button type="button" className="flex items-center p-1 space-x-1.5">
+            <button
+              onClick={() => handleDelete(_id)}
+              type="button"
+              className="flex items-center p-1 space-x-1.5"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
