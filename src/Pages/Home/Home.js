@@ -1,10 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import useDocumentTitle from "../../useDocumentTitle";
 import Banner from "./Banner/Banner";
+import Card from "./Card/Card";
 import Features from "./Features/Features";
 
 const Home = () => {
+  const data = useLoaderData();
+  const [one, two, there, ...rest] = data;
+  console.log(one, two, rest);
+
   useDocumentTitle("Home");
   return (
     <div>
@@ -40,6 +45,11 @@ const Home = () => {
           <Banner></Banner>
         </div>
       </section>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto w-[90%]">
+        {rest.map((y) => (
+          <Card key={y._id} y={y}></Card>
+        ))}
+      </div>
       {/* offer details */}
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20  text-gray-800">
         <h2 className="mb-8 text-4xl font-bold leading-none text-center">

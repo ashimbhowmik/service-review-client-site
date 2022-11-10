@@ -7,9 +7,7 @@ import ReviewCard from "./ReviewStore/ReviewCard/ReviewCard";
 const MyReviwes = () => {
   const [deleteData, setDeleteData] = useState([]);
   const handleDelete = (id) => {
-    const proceed = window.confirm(
-      "Are you sure, you want to cancel this order"
-    );
+    const proceed = window.confirm("Are you sure delete this review");
     if (proceed) {
       fetch(`http://localhost:5000/reviews/${id}`, {
         method: "DELETE",
@@ -24,7 +22,8 @@ const MyReviwes = () => {
             const remaining = deleteData.filter((odr) => odr._id !== id);
             setDeleteData(remaining);
           }
-        });
+        })
+        .finally(window.location.reload());
     }
   };
   const reviews = useLoaderData();

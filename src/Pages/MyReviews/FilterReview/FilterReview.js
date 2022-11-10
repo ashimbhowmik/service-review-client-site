@@ -1,6 +1,6 @@
 import React from "react";
 
-const FilterReview = ({ s }) => {
+const FilterReview = ({ s, handleDelete }) => {
   const { _id, email, message, rating, serviceName, userImage, customer } = s;
 
   return (
@@ -65,7 +65,11 @@ const FilterReview = ({ s }) => {
                 />
               </svg>
             </button>
-            <button type="button" className="flex items-center p-1 space-x-1.5">
+            <button
+              onClick={() => handleDelete(_id)}
+              type="button"
+              className="flex items-center p-1 space-x-1.5"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

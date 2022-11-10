@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 const ReviewCard = ({ r, handleDelete }) => {
   const { _id, email, message, rating, serviceName, userImage, customer } = r;
