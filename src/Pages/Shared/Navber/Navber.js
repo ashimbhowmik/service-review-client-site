@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const Navber = () => {
   const { user, logout } = useAuth();
-  console.log(user);
+
   return (
     <div>
       <div className="navbar bg-base-100 py-5 w-[95%] mx-auto ">
@@ -80,7 +81,7 @@ const Navber = () => {
               )}
             </ul>
           </div>
-          <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+          <Link className="btn btn-ghost normal-case text-xl">Project</Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">

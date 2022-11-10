@@ -99,6 +99,7 @@ const Login = () => {
                 e.preventDefault();
                 const email = e.target.email.value;
                 const password = e.target.password.value;
+                console.log(email, password);
 
                 handleLogin(email, password, loginUser, location, navigate);
               }}
@@ -185,11 +186,11 @@ const Login = () => {
                   </div>
                 </>
               )}
-              <input
-                type="button"
-                className="w-full px-8 py-3 font-semibold cursor-pointer bg-blue-600 text-gray-50 rounded-full"
-                value="login"
-              />
+              <div className="form-control mt-6 ">
+                <button className="w-full px-8 py-3 font-semibold cursor-pointer bg-blue-600 text-gray-50 rounded-full">
+                  Login
+                </button>
+              </div>
 
               <div className="space-y-2">
                 <p className="px-6 text-sm text-center text-gray-600">

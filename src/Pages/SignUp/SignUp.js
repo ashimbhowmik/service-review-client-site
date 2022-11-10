@@ -58,6 +58,7 @@ const SignUp = () => {
                 const photo = e.target.photo.value;
                 const password = e.target.password.value;
                 const confirm = e.target.confirm.value;
+                console.log(name, email);
 
                 if (password === confirm) {
                   handleSignup(
@@ -103,11 +104,11 @@ const SignUp = () => {
                 </div>
                 <div className="space-y-2">
                   <label for="email" className="block text-sm ">
-                    Email
+                    Photo
                   </label>
                   <input
                     type="text"
-                    name="photoUrl"
+                    name="photo"
                     placeholder="photo"
                     className="w-full px-3 py-2 border rounded-full border-gray-300 bg-gray-50 text-gray-800 focus:border-blue-600"
                   />
@@ -121,6 +122,19 @@ const SignUp = () => {
                   <input
                     type="password"
                     name="password"
+                    placeholder="password"
+                    className="w-full px-3 py-2 border rounded-full border-gray-300 bg-gray-50 text-gray-800 focus:border-blue-600"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <label for="password" className="text-sm ">
+                      Confirm Password
+                    </label>
+                  </div>
+                  <input
+                    type="password"
+                    name="confirm"
                     placeholder="password"
                     className="w-full px-3 py-2 border rounded-full border-gray-300 bg-gray-50 text-gray-800 focus:border-blue-600"
                   />
@@ -185,11 +199,11 @@ const SignUp = () => {
                 )}
               </>
 
-              <input
-                type="button"
-                className="w-full px-8 py-3 font-semibold cursor-pointer bg-blue-600 text-gray-50 rounded-full"
-                value="SignUp"
-              />
+              <div className="form-control mt-6 ">
+                <button className="w-full px-8 py-3 font-semibold cursor-pointer bg-blue-600 text-gray-50 rounded-full">
+                  SignUp
+                </button>
+              </div>
 
               <div className="space-y-2">
                 <p className="px-6 text-sm text-center text-gray-600">
