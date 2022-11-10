@@ -4,6 +4,7 @@ import signUpImg from "../../assets/images/SignUp/signup.png";
 import useAuth from "../Hooks/useAuth";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
+import useDocumentTitle from "../../useDocumentTitle";
 
 const handleSignup = (name, email, password, photo, registerUser, navigate) => {
   registerUser(email, password, name, navigate, photo);
@@ -31,6 +32,7 @@ const SignUp = () => {
   } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  useDocumentTitle("SignUp");
   return (
     <div>
       <section className="flex w-[85%] mx-auto mt-20 mb-36">

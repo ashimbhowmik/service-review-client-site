@@ -4,20 +4,15 @@ import loginImg from "../../assets/images/login/login.png";
 import useAuth from "../Hooks/useAuth";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
+import useDocumentTitle from "../../useDocumentTitle";
 
 const handleLogin = (email, password, loginUser, location, navigate) => {
   loginUser(email, password, location, navigate);
 };
 
 const Login = () => {
-  const {
-    signInWithGoogle,
-    loginUser,
-    isLoading,
-    authError,
-    user,
-    githubSignIn,
-  } = useAuth();
+  const { signInWithGoogle, loginUser, isLoading, authError, githubSignIn } =
+    useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -30,6 +25,7 @@ const Login = () => {
   const handleGithubSignUp = (githubSignIn, location, navigate) => {
     githubSignIn(location, navigate);
   };
+  useDocumentTitle("Login");
   return (
     <div>
       <section className="flex w-[85%] mx-auto mt-20 mb-36">

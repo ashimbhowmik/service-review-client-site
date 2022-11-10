@@ -2,6 +2,7 @@ import React from "react";
 
 const FilterReview = ({ s }) => {
   const { _id, email, message, rating, serviceName, userImage, customer } = s;
+
   return (
     <div>
       <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-50 text-gray-800 mx-auto mb-10">

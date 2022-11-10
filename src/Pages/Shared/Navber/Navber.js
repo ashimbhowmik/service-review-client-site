@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import logo from "../../../assets/images/logo.png";
 
 const Navber = () => {
   const { user, logout } = useAuth();
@@ -81,7 +81,12 @@ const Navber = () => {
               )}
             </ul>
           </div>
-          <Link className="btn btn-ghost normal-case text-xl">Project</Link>
+          <div className="flex items-center">
+            <img src={logo} className="w-10 h-10" alt="" />
+            <Link to="/" className="btn btn-ghost normal-case text-xl">
+              Wedding Photography
+            </Link>
+          </div>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">

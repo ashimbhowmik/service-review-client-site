@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../ContextAPI/AuthProvider/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
 import ReviewStore from "../../MyReviews/ReviewStore/ReviewStore";
+import useDocumentTitle from "../../../useDocumentTitle";
 
 const ServiceDetails = () => {
   const oneService = useLoaderData();
@@ -49,6 +50,7 @@ const ServiceDetails = () => {
       })
       .catch((er) => console.error(er));
   };
+  useDocumentTitle("ServiceDetails");
   return (
     <div>
       <section className="bg-slate-400 lg:w-[90%] mx-auto mt-10 lg:mt-[80px] pt-10 pb-10">
@@ -140,7 +142,10 @@ const ServiceDetails = () => {
           <>
             <i>
               <h1 className="text-center text-4xl text-white font-bold ">
-                Please Login to Give your Opinion
+                Please Login to Give your Opinion <br />
+                <Link className="underline" to="/login">
+                  Login
+                </Link>
               </h1>
             </i>
           </>

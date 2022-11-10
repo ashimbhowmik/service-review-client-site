@@ -1,6 +1,8 @@
 import React from "react";
+import useDocumentTitle from "../../useDocumentTitle";
 
 const Blog = () => {
+  useDocumentTitle("Blog");
   return (
     <div>
       <section className=" text-gray-800 mb-24 mt-16">

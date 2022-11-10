@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import useDocumentTitle from "../../useDocumentTitle";
 import useAuth from "../Hooks/useAuth";
 import ReviewCard from "./ReviewStore/ReviewCard/ReviewCard";
 
@@ -30,7 +31,8 @@ const MyReviwes = () => {
   const { user } = useAuth();
   const myReviews = reviews?.filter((x) => x.userImage === user?.photoURL);
   const { _id } = myReviews;
-  console.log(myReviews);
+  // console.log(myReviews);
+  useDocumentTitle("My Reviews");
   return (
     <div>
       <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-[80%] mx-auto my-20">

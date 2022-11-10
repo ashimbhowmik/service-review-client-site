@@ -1,10 +1,12 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useDocumentTitle from "../../useDocumentTitle";
 import ServicesCart from "./ServicesCart/ServicesCart";
 
 const Services = () => {
   const allServices = useLoaderData();
   // console.log(allServices);
+  useDocumentTitle("Services");
   return (
     <div className="w-[85%] mx-auto py-12 ">
       <h1 className="text-5xl font-semibold text-center mb-12 text-blue-600">

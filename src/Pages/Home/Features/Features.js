@@ -5,7 +5,7 @@ import img2 from "../../../assets/images/banner/MehendiCeremony.webp";
 const Features = () => {
   return (
     <div>
-      <section className="bg-gray-100 text-gray-800 mt-20 mb-24">
+      <section className=" text-gray-800 mt-6 mb-36">
         <h1 className="mb-14 text-4xl font-semibold text-center">
           Service Feature
         </h1>

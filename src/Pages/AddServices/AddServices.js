@@ -1,6 +1,7 @@
 import React from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
+import useDocumentTitle from "../../useDocumentTitle";
 
 const AddServices = () => {
   const handleReview = (event) => {
@@ -41,7 +42,7 @@ const AddServices = () => {
       })
       .catch((er) => console.error(er));
   };
-
+  useDocumentTitle("Add Services");
   return (
     <div>
       <section className="mx-auto  w-[90%] p-40">
