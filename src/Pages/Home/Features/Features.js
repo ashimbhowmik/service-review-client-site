@@ -5,7 +5,7 @@ import img2 from "../../../assets/images/banner/MehendiCeremony.webp";
 const Features = () => {
   return (
     <div>
-      <section className=" text-gray-800 mt-6 mb-36">
+      <section className=" text-gray-800 mt-6 mb-24">
         <h1 className="mb-14 text-4xl font-semibold text-center">
           Service Feature
         </h1>
@@ -29,11 +29,13 @@ const Features = () => {
               </svg>
               <div className="space-y-2">
                 <p className="text-lg font-medium leading-snug">
-                  Lorem ipsum dolor sit amet
+                  Patience and Flexibility
                 </p>
                 <p className="leading-snug">
-                  Praesentium ea et neque distinctio quas eius repudiandae
-                  quaerat obcaecati voluptatem similique!
+                  No matter how much you try to control every variable, things
+                  just wont go your way at times. There will be days when the
+                  lighting wont cooperate, when your models or clients will be
+                  exceptionally difficult,
                 </p>
               </div>
             </div>
@@ -53,12 +55,12 @@ const Features = () => {
                 ></path>
               </svg>
               <div className="space-y-2">
-                <p className="text-lg font-medium leading-snug">
-                  Lorem ipsum dolor sit amet
-                </p>
+                <p className="text-lg font-medium leading-snug">Good Skills</p>
                 <p className="leading-snug">
-                  Praesentium ea et neque distinctio quas eius repudiandae
-                  quaerat obcaecati voluptatem similique!
+                  Being a professional photographer means working with
+                  people—whether it’s a client, a model, or even a fellow
+                  photographer. Thus, being a good photographer requires good
+                  people skills
                 </p>
               </div>
             </div>
@@ -78,12 +80,11 @@ const Features = () => {
                 ></path>
               </svg>
               <div className="space-y-2">
-                <p className="text-lg font-medium leading-snug">
-                  Lorem ipsum dolor sit amet
-                </p>
+                <p className="text-lg font-medium leading-snug">Passion</p>
                 <p className="leading-snug">
-                  Praesentium ea et neque distinctio quas eius repudiandae
-                  quaerat obcaecati voluptatem similique!
+                  When you’re passionate about what you do, it will always shine
+                  through in your work. It takes a lot of time and effort to
+                  make it as a professional photographer,
                 </p>
               </div>
             </div>

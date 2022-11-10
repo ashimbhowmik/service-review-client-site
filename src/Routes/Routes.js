@@ -20,7 +20,8 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () =>
+          fetch("https://service-review-server-site.vercel.app/services"),
       },
 
       {
@@ -38,14 +39,17 @@ export const routes = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () =>
+          fetch("https://service-review-server-site.vercel.app/services"),
       },
 
       {
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://service-review-server-site.vercel.app/services/${params.id}`
+          ),
       },
 
       {
@@ -60,7 +64,8 @@ export const routes = createBrowserRouter([
             <MyReviwes></MyReviwes>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/reviews"),
+        loader: () =>
+          fetch("https://service-review-server-site.vercel.app/reviews"),
       },
 
       {

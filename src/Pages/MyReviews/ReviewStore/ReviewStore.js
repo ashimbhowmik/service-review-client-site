@@ -7,7 +7,7 @@ const ReviewStore = ({ _id }) => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure delete your review");
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://service-review-server-site.vercel.app/reviews/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `Bearer ${localStorage.getItem("genius-token")}`,
@@ -25,7 +25,7 @@ const ReviewStore = ({ _id }) => {
     }
   };
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://service-review-server-site.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

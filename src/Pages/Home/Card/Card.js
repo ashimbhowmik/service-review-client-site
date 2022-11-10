@@ -7,7 +7,7 @@ const Card = ({ y }) => {
   const { _id, img, price, name, rating, description } = y;
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+      <div className="card w-96 bg-base-100 shadow-xl mx-auto mt-14">
         <figure>
           <PhotoProvider>
             <PhotoView src={img}>
